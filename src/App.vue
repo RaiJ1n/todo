@@ -5,7 +5,7 @@
     <ul>
       <div v-if="checkTask">
         <li v-for="task in listOfTask" :key="task.id" class="flex justify-between items-center p-2 rounded mb-2"
-          :class="{ 'bg-blue-600 text-white': task.isCompleted, 'bg-red-600 text-black': !task.isCompleted }">
+          :class="{ 'bg-green-600 text-white': task.isCompleted, 'bg-red-600 text-white': !task.isCompleted }">
           <div>{{ task.name }}</div>
           <div class="flex items-center">
             <input type="checkbox" v-model="task.isCompleted" class="mr-2">
