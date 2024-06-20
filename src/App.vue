@@ -9,7 +9,7 @@
           <div>{{ task.name }}</div>
           <div class="flex items-center">
             <input type="checkbox" v-model="task.isCompleted" class="mr-2">
-            <button v-on:click="deleteTask(task.id)" class="bg-gray-200 px-2 py-1 rounded ml-2" v-if="task.isCompleted">Remove</button>
+            <button v-on:click="deleteTask(task.id)" class="bg-red-600 px-2 py-1 rounded ml-2" v-if="task.isCompleted">Remove</button>
           </div>
         </li>
       </div>
