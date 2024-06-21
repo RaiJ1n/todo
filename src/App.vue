@@ -1,21 +1,9 @@
 <template>
-  <div class="app-background">
+  <div class="app-background p-4">
     <h1 class="text-center text-2xl font-bold mb-4">Todo Vue</h1>
     <p class="mb-4">Number of Tasks: {{ listOfTask.length }}</p>
-    <ul>
-      <div v-if="checkTask">
-        <li v-for="task in listOfTask" :key="task.id" class="flex justify-between items-center p-2 rounded mb-2"
-          :class="{ 'bg-green-600 text-white': task.isCompleted, 'bg-red-600 text-white': !task.isCompleted }">
-          <div>{{ task.name }}</div>
-          <div class="flex items-center">
-            <input type="checkbox" v-model="task.isCompleted" class="mr-2">
-            <button v-on:click="deleteTask(task.id)" class="bg-red-600 px-2 py-1 rounded ml-2" v-if="task.isCompleted">Remove</button>
-          </div>
-        </li>
-      </div>
-      <div v-else>
-        <p class="text-center">List of Task is Empty</p>
-      </div>
+    <ul class="space-y-2">
+      <todolist :listOfTask="listOfTask" :checkTask="checkTask"  />
     </ul>
     <div class="flex py-6 space-x-2">
       <input v-model="taskInput" type="text" class="border border-green-800 p-2 rounded flex-grow">
@@ -26,6 +14,7 @@
 
 <script setup>
 import { computed, ref } from 'vue';
+import TodoList from './components/TodoList.vue';
 
 const taskInput = ref('');
 
