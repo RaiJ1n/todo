@@ -3,7 +3,7 @@
     <h1 class="text-center text-2xl font-bold mb-4">Todo Vue</h1>
     <p class="mb-4">Number of Tasks: {{ listOfTask.length }}</p>
     <ul class="space-y-2">
-      <todolist :listOfTask="listOfTask" :checkTask="checkTask"  />
+      <TodoList :listOfTask="listOfTask" :checkTask="checkTask"  />
     </ul>
     <div class="flex py-6 space-x-2">
       <input v-model="taskInput" type="text" class="border border-green-800 p-2 rounded flex-grow">

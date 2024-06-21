@@ -10,9 +10,8 @@
   </template>
   
   <script setup>
-  
   import TodoItem from './TodoItem.vue';
-  
+  const props = defineProps({listOfTask, })
 
   </script>
   
